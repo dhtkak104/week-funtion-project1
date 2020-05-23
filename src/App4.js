@@ -38,11 +38,9 @@ export default function App4(props) {
         </table>
     )
     const movie_pop = pop.map((p, index)=>
-        <tr key={index}>
-            <td>
-                <img scr={p.poster.substring(0,p.poster.indexOf(")"))} width={"30"} height={"30"}/>
-                <td>{p.title}</td>
-            </td>
+        <tr>
+            <td><img src={p.poster.substring(0,p.poster.indexOf(")"))} width={"30"} height={"30"}/></td>
+            <td>{p.title}</td>
         </tr>
     )
     return (
