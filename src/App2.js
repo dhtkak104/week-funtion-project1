@@ -10,6 +10,11 @@ function App2(props) {
                 console.log(res.data);
             })
     }, [])
+
+    const handlChange = (e) => {
+        console.log(e.target.value);
+    }
+
     const html = music.map((m, index) =>
         <tr key={index}>
             <td>{m.rank}</td>
@@ -39,7 +44,12 @@ function App2(props) {
             <table className={"table"}>
                 <tr>
                     <td>
-                        <input type={"text"} className={"input-sm"} width={"25"}/>
+                        <input
+                            type={"text"} c
+                            lassName={"input-sm"}
+                            width={"25"}
+                            onChange={handlChange}
+                        />
                     </td>
                 </tr>
             </table>
