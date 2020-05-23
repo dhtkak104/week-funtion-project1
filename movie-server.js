@@ -76,3 +76,27 @@ app.get("/movie_home", (req,res)=>{
     })
 
 })
+
+app.get("/movie_news", (request,response)=>{
+    var url="mongodb://211.238.142.181:27017"
+    Client.connect(url,(err,client)=>{
+        var db=client.db("mydb");
+        db.collection("news").find({})
+            .toArray(function (err, docs) {
+                response.json(docs)
+                client.close();
+            })
+    })
+})
+
+app.get("/movie_pop", (request,response)=>{
+    var url="mongodb://211.238.142.181:27017"
+    Client.connect(url,(err,client)=>{
+        var db=client.db("mydb");
+        db.collection("news_pop").find({})
+            .toArray(function (err, docs) {
+                response.json(docs)
+                client.close();
+            })
+    })
+})
